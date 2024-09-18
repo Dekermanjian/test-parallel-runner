@@ -1,0 +1,7 @@
+ipython>=8.10
+jupyterlab>=3.0
+kedro~=0.19.8
+notebook
+ruff~=0.1.8
+polars~=1.0
+kedro-datasets[pandas.CSVDataset, pandas.ExcelDataset, pandas.ParquetDataset, plotly.PlotlyDataset, plotly.JSONDataset, matplotlib.MatplotlibWriter, polars.EagerPolarsDataset]~=2.0

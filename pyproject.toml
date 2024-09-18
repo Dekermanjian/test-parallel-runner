@@ -1,0 +1,43 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "test_parallel_runner"
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[project.scripts]
+test-parallel-runner = "test_parallel_runner.__main__:main"
+
+[tool.kedro]
+package_name = "test_parallel_runner"
+project_name = "test_parallel_runner"
+kedro_init_version = "0.19.8"
+tools = [ "Linting", "Custom Logging", "Data Structure",]
+example_pipeline = "False"
+source_dir = "src"
+
+[tool.ruff]
+line-length = 88
+show-fixes = true
+select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
+ignore = [ "E501",]
+
+[project.entry-points."kedro.hooks"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "test_parallel_runner.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "6602c38443e6472e9d2383da2e8208ed"
